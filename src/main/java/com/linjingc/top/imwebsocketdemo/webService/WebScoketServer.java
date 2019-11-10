@@ -1,5 +1,7 @@
 package com.linjingc.top.imwebsocketdemo.webService;
 
+import com.alibaba.fastjson.JSON;
+import netscape.javascript.JSObject;
 import org.springframework.stereotype.Component;
 
 import javax.websocket.*;
@@ -24,8 +26,8 @@ public class WebScoketServer {
     @OnOpen
     public void onOpen(@PathParam("username") String username, Session session) {
         System.out.println(username);
-        //this.session = session;
-        //arraySet.add(this);
+        this.session = session;
+        arraySet.add(this);
         //this.addOnlineNum();
         System.out.println("有一个新连接加入，当前在线 " + this.getOnLineNum() + " 人");
     }
@@ -71,6 +73,7 @@ public class WebScoketServer {
     @OnMessage
     public void onMessage(Session session, String msg) {
         System.out.println("消息监控：" + msg);
+        MessageDto messageDto = JSON.parseObject(msg, MessageDto.class);
         for (WebScoketServer webScoketServer : arraySet) {
             try {
                 webScoketServer.onSend(msg);

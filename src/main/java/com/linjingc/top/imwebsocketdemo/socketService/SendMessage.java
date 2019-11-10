@@ -1,4 +1,4 @@
-package com.linjingc.top.imwebsocketdemo.webService;
+package com.linjingc.top.imwebsocketdemo.socketService;
 
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
