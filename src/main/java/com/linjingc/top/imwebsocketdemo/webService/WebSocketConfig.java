@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.socket.server.standard.ServerEndpointExporter;
 
 /**
- * 开启sokcet支持
+ * 开启socket支持
  */
 @Configuration
 public class WebSocketConfig {
