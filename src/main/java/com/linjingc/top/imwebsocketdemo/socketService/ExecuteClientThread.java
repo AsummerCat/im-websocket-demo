@@ -78,6 +78,13 @@ public class ExecuteClientThread implements Runnable {
         }
     }
 
+    /**
+     * 注册用户
+     * @param userName
+     * @param client
+     * @param Flag
+     * @throws IOException
+     */
     private void userRegist(String userName, Socket client, boolean Flag) throws IOException {
         //服务器向用户输出一些提示信息
         PrintStream PrintToCilent = new PrintStream(client.getOutputStream());
@@ -93,6 +100,13 @@ public class ExecuteClientThread implements Runnable {
         }
     }
 
+
+    /**
+     * 聊天室消息
+     * @param scanner
+     * @param client
+     * @throws IOException
+     */
     private void groupChat(Scanner scanner, Socket client) throws IOException {
         // 取出clientMap中所有客户端Socket，然后遍历一遍
         // 分别取得每个Socket的输出流向每个客户端输出
@@ -141,6 +155,12 @@ public class ExecuteClientThread implements Runnable {
 
     }
 
+    /**
+     * 私聊消息
+     * @param scanner
+     * @param privatepeopleName
+     * @throws IOException
+     */
     private void privateChat(Scanner scanner, String privatepeopleName) throws IOException {
 
         Socket privateUser = clientMap.get(privatepeopleName);
