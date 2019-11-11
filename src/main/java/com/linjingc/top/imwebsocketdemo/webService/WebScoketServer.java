@@ -28,7 +28,7 @@ public class WebScoketServer {
         System.out.println(username);
         this.session = session;
         arraySet.add(this);
-        //this.addOnlineNum();
+        this.addOnlineNum();
         System.out.println("有一个新连接加入，当前在线 " + this.getOnLineNum() + " 人");
     }
 
