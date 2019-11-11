@@ -10,6 +10,9 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * (服务端推送消息)线程
+ */
 public class ExecuteClientThread implements Runnable {
 
     private static Map<String, Socket> clientMap = new ConcurrentHashMap<>();//存储所有的用户信息
