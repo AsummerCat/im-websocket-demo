@@ -4,6 +4,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 
 /**
+ * 读取套接字
  * @author cxc
  * @date 2019/11/9 15:59
  */
